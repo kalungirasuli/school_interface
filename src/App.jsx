@@ -1,26 +1,21 @@
-
-import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route  } from 'react-router-dom'
 import './App.css'
+import { DoubleNavbar } from './component/sidebar'
+import { TableSelection } from './component/club'
+
 
 function App() {
-    
-  const [allHouse, setAllHouse] = useState([]);
-  
-    useEffect(() => {
-      fetch('https://schoolapi-op58.onrender.com/v1/clubs')
-        .then(res => res.json())
-        .then(data => setAllHouse(data))
-    },[])
+
 
   return (
     <>
-       {
-       allHouse.map((house) => (
-        <div key={house._id}>
-          <h1>{house.name}</h1>
-        </div>
-       ))
-       }
+       <BrowserRouter>
+         <Routes>
+           <Route path='/' element={<DoubleNavbar />} />
+           <Route path='/Clubs' element={<TableSelection />} />
+         </Routes>
+       </BrowserRouter>
+    
     </>
   )
 }
