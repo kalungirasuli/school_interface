@@ -13,14 +13,14 @@ const useStyles = createStyles((theme) => ({
 
 
 
-export function TableSelection() {
+export function DeptSelection() {
   const [data, setData] = useState([]);
 
   const { classes, cx } = useStyles();
   const [selection, setSelection] = useState(['1']);
 
   useEffect(() => {
-    fetch('https://schoolapi-op58.onrender.com/v1/clubs')
+    fetch('https://schoolapi-op58.onrender.com/v1/departments')
       .then(res => res.json())
       .then(data => setData(data))
   },[])
@@ -47,7 +47,7 @@ export function TableSelection() {
           <Group spacing="sm">
             <Avatar size={26} src={item.avatar} radius={26} />
             <Text size="sm" weight={500}>
-              {item.headOfClub}
+              {item.departmentName}
             </Text>
           </Group>
         </td>

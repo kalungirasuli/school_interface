@@ -9,6 +9,7 @@ import {
   IconUser,
   IconSettings,
 } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 // import { MantineLogo } from '@mantine/ds';
 
 const useStyles = createStyles((theme) => ({
@@ -79,7 +80,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.xl,
   },
 
-  link: {
+  Link: {
     boxSizing: 'border-box',
     display: 'block',
     textDecoration: 'none',
@@ -120,22 +121,22 @@ const mainLinksMockdata = [
   { icon: IconSettings, label: 'Settings' },
 ];
 
-const linksMockdata = [
-  'Clubs',
-  'Deptments',
-  'Dashboard',
-  'Staff',
-  'Students',
-  'Courses',
-  'Clients',
-  'Databases',
+// const linksMockdata = [
+//   'Clubs',
+//   'Deptments',
+//   'Dashboard',
+//   'Staff',
+//   'Students',
+//   'Courses',
+//   'Clients',
+//   'Databases',
   
-];
+// ];
 
 export function DoubleNavbar() {
   const { classes, cx } = useStyles();
   const [active, setActive] = useState('Releases');
-  const [activeLink, setActiveLink] = useState('Settings');
+  
 
   const mainLinks = mainLinksMockdata.map((link) => (
     <Tooltip
@@ -154,19 +155,6 @@ export function DoubleNavbar() {
     </Tooltip>
   ));
 
-  const links = linksMockdata.map((link) => (
-    <a
-      className={cx(classes.link, { [classes.linkActive]: activeLink === link })}
-      href="/"
-      onClick={(event) => {
-        event.preventDefault();
-        setActiveLink(link);
-      }}
-      key={link}
-    >
-      {link}
-    </a>
-  ));
 
   return (
     <Navbar height={750} width={{ sm: 300 }}>
@@ -181,8 +169,9 @@ export function DoubleNavbar() {
           <Title order={4} className={classes.title}>
             {active}
           </Title>
-
-          {links}
+           <Link className={classes.Link} to="/clubs">Club</Link>
+           <Link className={classes.Link} to="/Departments">Departments</Link>
+          
         </div>
       </Navbar.Section>
     </Navbar>
