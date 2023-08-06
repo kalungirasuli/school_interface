@@ -1,4 +1,5 @@
-
+import { Route, Routes } from 'react-router'
+import Staff from './components/Stafftable.jsx'
  //components
  import Nav from './components/Nav.jsx'
 function App() {
@@ -9,8 +10,11 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-      <h3> TITLE</h3>
+      <h3> Staff</h3>
       <hr />
+      <Routes>
+        <Route path='/staff' element={<Staff/>}/>
+      </Routes>
     </div>
     </div>
      
