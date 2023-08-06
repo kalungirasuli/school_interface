@@ -1,6 +1,8 @@
 
  //components
- import Nav from './components/Nav.jsx'
+import Nav from './components/Nav.jsx'
+import StudentTable from './components/students.jsx'
+
 function App() {
  
 
@@ -9,8 +11,7 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-      <h3> TITLE</h3>
-      <hr />
+      <StudentTable />
     </div>
     </div>
      
