@@ -142,7 +142,7 @@ function StudentTable() {
 
            
             <br />
-            <form onSubmit={(e) => e.preventDefault()} className="form-inline mb-3">
+        <form onSubmit={(e) => e.preventDefault()} className="form-inline mb-3" style={{width: 500, marginLeft:390}}>
                 <div className="form-group mx-sm-3 mb-2">
                     {/* <label htmlFor="searchQuery" className="sr-only">Search by ID</label> */}
                     <input
