@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom"
+
 function Nav() {
   return (
     <>
@@ -6,7 +8,7 @@ function Nav() {
         <ul>
             <li className="logo">SCHOOL</li>
             <li>Home</li>
-            <li>Staff</li>
+            <li> <Link to='/staff'>Staff</Link></li>
             <li>Students</li>
             <li>Clubs</li>
             <li>Departments</li>
