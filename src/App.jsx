@@ -10,6 +10,8 @@ import StudentTable from './components/students.jsx'
 import AddDepartment from './components/AddDepartment.jsx';
 import EditDepartment from './components/EditDepartment.jsx';
 import Departments from './components/Departments.jsx';
+import AddClub from './components/AddClub.jsx'
+
 function App() {
 
 
@@ -19,20 +21,21 @@ function App() {
         <Nav />
         <div className="view">
 
-          <Routes>
-            <Route path='/staff' element={<Staff />} />
+      <Routes>
+      <Route path='/staff' element={<Staff />} />
             <Route path='/students' element={<StudentTable />} />
             <Route path='/clubs' element={<Clubs />} />
             <Route path='/courses' element={<Courses />} />
             <Route path='/departments' element={<Departments/>}/>
-        <Route path='/departments/:id' element={<EditDepartment/>}/>
-        <Route path='/AddDepartment' element={<AddDepartment/>}/>
-          </Routes>
-
-
-        </div>
-      </div>
-
+            <Route path='/departments/:id' element={<EditDepartment/>}/>
+            <Route path='/AddDepartment' element={<AddDepartment/>}/>
+            <Route path='//add/club' element={<AddDepartment/>}/>
+      </Routes>
+    
+          
+    </div>
+    </div>
+     
     </>
   )
 }
