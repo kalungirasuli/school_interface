@@ -1,48 +1,15 @@
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function StudentTable() {
     const [students, setStudents] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [editStudent, setEditStudent] = useState(null); // New state variable to hold the student being edited
-    const [formData, setFormData] = useState({
-        id: '',
-        firstName: '',
-        secondName: '',
-        gender: '',
-    });
-
-//---------------- POST -------------------- 
-    const handleChange = (event) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value,
-        });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        fetch('https://schoolapi-op58.onrender.com/v1/students', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data); // Handle the response data here
 
 
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    };
-
-//------------- GET -----------------
+    //------------- GET -----------------
     useEffect(() => {
         // Fetch students data from the API and set it to the students state
         fetch('https://schoolapi-op58.onrender.com/v1/students')
@@ -51,7 +18,7 @@ function StudentTable() {
             .catch((error) => console.error('Error fetching students:', error));
     }, []);
 
-//------------- GET BY ID ---------------
+    //------------- GET BY ID ---------------
     useEffect(() => {
         // If there's no search query, do not fetch any data
         if (!searchQuery) {
@@ -71,7 +38,7 @@ function StudentTable() {
     }, [searchQuery]);
 
 
-//---------------- DELETE -------------------
+    //---------------- DELETE -------------------
     const handleDelete = (id) => {
         // Delete student with the given ID from the API
         fetch(`https://schoolapi-op58.onrender.com/v1/students/${id}`, {
@@ -87,7 +54,7 @@ function StudentTable() {
             .catch((error) => console.error('Error deleting student:', error));
     };
 
-// ----------------- PUT -------------------
+    // ----------------- PUT -------------------
     const handleEdit = (id) => {
         // Find the student to be edited from the students or searchResults array
         const studentToEdit = students.find((student) => student.id === id) || searchResults.find((student) => student.id === id);
@@ -128,41 +95,10 @@ function StudentTable() {
 
     return (
         <>
-
-            <div className="container-fluid">
-                <div className='d-flex justify-content-center'>
-
-                    <div className='col' >
-                        <br />
-                        <h2 style={{ marginLeft: 500 }}> Create Student</h2>
-                        <br />
-                        <form onSubmit={handleSubmit} className="form-inline" >
-                            <div className="form-group  mb-3">
-
-                                <input type="text" name="id" value={formData.id} onChange={handleChange} className="form-control" placeholder=" Enter ID" />
-                            </div>
-                            <div className="form-group  mb-3">
-
-                                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="form-control" placeholder=" EnterFirst Name" />
-                            </div>
-                            <div className="form-group mb-3">
-
-                                <input type="text" name="secondName" value={formData.secondName} onChange={handleChange} className="form-control" placeholder=" Enter Second Name" />
-                            </div>
-                            <div className="form-group  mb-3">
-
-                                <input type="text" name="gender" value={formData.gender} onChange={handleChange} className="form-control" placeholder=" Enter Gender" />
-                            </div>
-                            <button type="submit" className="btn btn-primary mb-2">Register</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-
             <br />
 
             <h2 style={{ marginLeft: 520 }}>Students Table</h2>
+            <hr />
             {editStudent && (
                 <form onSubmit={handleEditSubmit}>
                     <h2>Edit Student</h2>
@@ -214,8 +150,8 @@ function StudentTable() {
 
 
             <br />
-            
-            <form onSubmit={(e) => e.preventDefault()} className="form-inline mb-3" style={{ width: 500, marginLeft: 390 }}>
+
+            <form onSubmit={(e) => e.preventDefault()} className="form-inline mb-3" style={{ width: 500, marginLeft: 510 }}>
                 <div className="form-group mx-sm-3 mb-2">
                     {/* <label htmlFor="searchQuery" className="sr-only">Search by ID</label> */}
                     <input
@@ -264,24 +200,22 @@ function StudentTable() {
                                 <td>{student.secondName}</td>
                                 <td>{student.gender}</td>
                                 <td>
-                                    <button className="btn btn-danger" onClick={() => handleDelete(student.id)}>Delete</button>
+                                    <button  onClick={() => handleDelete(student.id)}>Delete</button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-dark" onClick={() => handleEdit(student.id)}>Edit</button>
+                                    <button style={{backgroundColor: 'orange', color: 'black'}} onClick={() => handleEdit(student.id)}>Edit</button>
                                 </td>
                             </tr>
                         ))}
                 </tbody>
             </table>
-            <div style={{ marginLeft: 300 }}>
-                {/* <Link to="/Students/create" className="btn btn-success">Add Student</Link> */}
-            </div>
+            <button style={{ marginLeft: 50, backgroundColor:'green'}}>
+                <Link style={{color:'white', textDecoration:'none'}} to="/AddStudent" className="btn btn-success">+ Add </Link>
+            </button>
 
         </>
     );
 }
-
-
 
 
 export default StudentTable;
