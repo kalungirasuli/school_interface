@@ -10,7 +10,7 @@ function Nav() {
             <li>Home</li>
             <li>Staff</li>
             <li>Students</li>
-            <li>Clubs</li>
+            <li> <Link to ="/clubs">Clubs</Link> </li>
             <li>Departments</li>
             <li>Courses</li> 
         </ul>

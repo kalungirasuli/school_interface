@@ -2,6 +2,10 @@
  //components
  import Nav from './components/Nav.jsx'
  import StudentTable  from './components/students.jsx'
+
+ import Courses from './components/Courses.jsx'
+ import Clubs from './components/Clubs.jsx';
+
 function App() {
  
 
@@ -10,9 +14,21 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-      <h3> TITLE</h3>
+
+      
       <StudentTable/>
       <hr />
+
+      {/* <h3> Staff</h3>
+      <hr /> */}
+      <Routes>
+        <Route path='/staff' element={<Staff/>}/>
+        <Route path='/clubs' element={<Clubs/>}/>
+      </Routes>
+    
+            {/* <h3> TITLE</h3>
+            <hr />
+            <Courses /> */}
     </div>
     </div>
      
