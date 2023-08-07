@@ -1,6 +1,5 @@
 
 
-
 function Nav() {
   return (
     <>
@@ -10,7 +9,7 @@ function Nav() {
             <li className="logo">SCHOOL</li>
             <li>Home</li>
             <li>Staff</li>
-            <li> Students</li>
+            <li>Students</li>
             <li>Clubs</li>
             <li>Departments</li>
             <li>Courses</li> 

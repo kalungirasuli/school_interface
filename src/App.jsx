@@ -1,9 +1,7 @@
-
+//import { BrowserRouter, Route, Switch } from 'react-router-dom';
  //components
-import Nav from './components/Nav.jsx'
-import StudentTable from './components/students.jsx'
-
-
+ import Nav from './components/Nav.jsx'
+ import StudentTable  from './components/students.jsx'
 function App() {
  
 
@@ -12,7 +10,9 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-      <StudentTable />
+      <h3> TITLE</h3>
+      <StudentTable/>
+      <hr />
     </div>
     </div>
      
