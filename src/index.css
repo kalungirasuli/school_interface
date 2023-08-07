@@ -31,6 +31,21 @@ li:hover{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+td{
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.edit{
+  background-color: rgb(255, 187, 0);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
 .main{
   display:grid;
   grid-template-columns: 10% auto;
