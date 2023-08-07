@@ -27,15 +27,23 @@ export default function Staff() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Department Name</th>
-            <th>Actions</th>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
           {data.map((staff) => (
             <tr key={staff._id}>
               <td>{staff._id}</td>
-              <td>{staff.departmentName}</td>
+              <td>{staff.firstName}</td>
+              <td>{staff.secondName}</td>
+              <td>{staff.gender}</td>
+              <td>{staff.age}</td>
+              <td>{staff.email}</td>
+              
             </tr>
           ))}
         </tbody>
