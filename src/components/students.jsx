@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import '../index.css';
 
 function StudentTable() {
     const [students, setStudents] = useState([]);
