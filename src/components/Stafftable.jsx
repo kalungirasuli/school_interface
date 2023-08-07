@@ -51,7 +51,7 @@ export default function Staff() {
         </tbody>
       </table>
       <button className="add" >
-        <Link to=''> +Add</Link>
+        <Link to=''  className="addtext"> +Add</Link>
       </button>
     </>
   );

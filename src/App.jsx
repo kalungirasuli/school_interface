@@ -1,14 +1,11 @@
-
-import { Route, Routes } from 'react-router'
-import Staff from './components/Stafftable.jsx'
 import React from 'react'
-//import { BrowserRouter, Route, Switch } from 'react-router-dom';
- //components
- import Nav from './components/Nav.jsx'
- import Courses from './components/Courses.jsx'
- import Clubs from './components/Clubs.jsx';
+import { Route, Routes } from 'react-router' 
 
- //import Courses from './components/Courses.jsx'
+//components
+ import Staff from './components/Stafftable.jsx'
+ import Nav from './components/Nav.jsx'
+ import Clubs from './components/Clubs.jsx';
+ import Courses from './components/Courses.jsx'
 function App() {
  
 
@@ -21,6 +18,8 @@ function App() {
       <Routes>
         <Route path='/staff' element={<Staff/>}/>
         <Route path='/clubs' element={<Clubs/>}/>
+        <Route path='/courses' element={<Courses/>}/>
+
       </Routes>
     
           

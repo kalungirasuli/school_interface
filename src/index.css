@@ -32,12 +32,15 @@ li:hover{
   overflow-x: hidden;
 }
 table{
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
+  margin: 20px auto;
+
 }
 td{
   color: rgb(0, 0, 0);
   text-align: center;
+  padding: 10px;
 }
 .edit{
   background-color: rgb(255, 187, 0);
@@ -52,13 +55,17 @@ td{
   border: none;
   padding: 5px;
   border-radius: 5px;
+  margin: 20px 10px;
 
 }
-Link{
+.addtext{
+  padding: 10px;
+  color:white;
   text-decoration: none;
-  color:#ffff;
-  
-
+}
+.links{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 .main{
   display:grid;
