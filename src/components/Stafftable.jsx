@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Staff() {
- 
+
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -34,6 +34,7 @@ export default function Staff() {
             <th>Gender</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,9 @@ export default function Staff() {
               <td>{staff.gender}</td>
               <td>{staff.age}</td>
               <td>{staff.email}</td>
+              <td>
+              <Link to={`/staff/${staff._id}`} className="link-button">Edit</Link>
+              </td>
               
             </tr>
           ))}

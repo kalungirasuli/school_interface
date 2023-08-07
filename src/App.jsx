@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router'
  import Nav from './components/Nav.jsx'
  import Clubs from './components/Clubs.jsx';
  import Courses from './components/Courses.jsx'
+ import EditStaff from './components/EditStaff.jsx'
 function App() {
  
 
@@ -19,7 +20,7 @@ function App() {
         <Route path='/staff' element={<Staff/>}/>
         <Route path='/clubs' element={<Clubs/>}/>
         <Route path='/courses' element={<Courses/>}/>
-
+        <Route path='/staff/:id' element={<EditStaff/>}/>
       </Routes>
     
           
