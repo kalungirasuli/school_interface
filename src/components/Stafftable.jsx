@@ -23,6 +23,8 @@ export default function Staff() {
 
   return (
     <>
+     <h3>Staff </h3>
+      <hr />
       <table>
         <thead>
           <tr>
@@ -48,7 +50,7 @@ export default function Staff() {
           ))}
         </tbody>
       </table>
-      <button style={{color: "red"}} >
+      <button className="add" >
         <Link to=''> +Add</Link>
       </button>
     </>

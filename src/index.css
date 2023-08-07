@@ -46,6 +46,20 @@ td{
   padding: 5px;
   border-radius: 5px;
 }
+.add{
+  background-color: rgb(3, 114, 30);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+Link{
+  text-decoration: none;
+  color:#ffff;
+  
+
+}
 .main{
   display:grid;
   grid-template-columns: 10% auto;
