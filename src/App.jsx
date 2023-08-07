@@ -1,7 +1,7 @@
 
 import { Route, Routes } from 'react-router'
 import Staff from './components/Stafftable.jsx'
-import React from 'react'
+
 //import { BrowserRouter, Route, Switch } from 'react-router-dom';
  //components
  import Nav from './components/Nav.jsx'
@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/staff' element={<Staff/>}/>
         <Route path='/clubs' element={<Clubs/>}/>
+        <Route path='/Courses' element={<Courses/>}/>
       </Routes>
     
             {/* <h3> TITLE</h3>

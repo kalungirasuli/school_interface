@@ -12,7 +12,7 @@ function Nav() {
             <li>Students</li>
             <li> <Link to ="/clubs">Clubs</Link> </li>
             <li>Departments</li>
-            <li>Courses</li> 
+            <li><Link to ="/Courses">Courses</Link></li> 
         </ul>
       </div>
     </>
