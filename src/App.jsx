@@ -12,16 +12,11 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-     {/* <BrowserRouter>
-      <Switch>
-          <Route path="/Staff">  */}
+    
             <h3> TITLE</h3>
             <hr />
             <Courses />
-          {/* </Route>
-        </Switch>
-      </BrowserRouter> */}
-      
+        
     </div>
     </div>
      
