@@ -17,6 +17,9 @@ function Courses() {
       });
   }, []);
  return(
+  <>
+   <h3>Course </h3>
+      <hr />
     <table>
         <thead>
             <tr>
@@ -41,6 +44,7 @@ function Courses() {
         ))}
         </tbody>
     </table>
+  </>
  )
 }
 export default Courses;

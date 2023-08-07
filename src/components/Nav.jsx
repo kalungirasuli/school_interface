@@ -8,11 +8,11 @@ function Nav() {
         <ul>
             <li className="logo">SCHOOL</li>
             <li>Home</li>
-            <li>Staff</li>
-            <li> <Link to ="/students">Students</Link> </li>
-            <li>Clubs</li>
+            <li> <Link to='/staff'  className="links">Staff</Link></li>
+            <li> <Link to='/students'  className="links">Students</Link></li>
+            <li> <Link to ="/clubs"  className="links">Clubs</Link> </li>
             <li>Departments</li>
-            <li>Courses</li> 
+            <li><Link to="/courses" className="links">Courses</Link></li> 
         </ul>
       </div>
     </>

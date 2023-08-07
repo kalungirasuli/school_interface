@@ -21,6 +21,9 @@ function Clubs() {
     }, []);
 
     return(
+        <>
+         <h3>Clubs</h3>
+      <hr />
         <table>
             <thead>
                 <tr>
@@ -41,6 +44,7 @@ function Clubs() {
                 ))}
             </tbody>
         </table>
+        </>
     )
 }
 export default Clubs;

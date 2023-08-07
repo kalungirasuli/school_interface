@@ -32,12 +32,15 @@ li:hover{
   overflow-x: hidden;
 }
 table{
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
+  margin: 20px auto;
+
 }
 td{
   color: rgb(0, 0, 0);
   text-align: center;
+  padding: 10px;
 }
 .edit{
   background-color: rgb(255, 187, 0);
@@ -45,6 +48,24 @@ td{
   border: none;
   padding: 5px;
   border-radius: 5px;
+}
+.add{
+  background-color: rgb(3, 114, 30);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px 10px;
+
+}
+.addtext{
+  padding: 10px;
+  color:white;
+  text-decoration: none;
+}
+.links{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 .main{
   display:grid;
@@ -72,6 +93,3 @@ th,td{
   border-bottom: 1px solid black;
 }
 
-button{
-  color: aquamarine;
-}
