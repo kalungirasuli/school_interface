@@ -7,6 +7,9 @@ import Nav from './components/Nav.jsx'
 import Clubs from './components/Clubs.jsx';
 import Courses from './components/Courses.jsx'
 import StudentTable from './components/students.jsx'
+import AddDepartment from './components/AddDepartment.jsx';
+import EditDepartment from './components/EditDepartment.jsx';
+import Departments from './components/Departments.jsx';
 function App() {
 
 
@@ -21,7 +24,9 @@ function App() {
             <Route path='/students' element={<StudentTable />} />
             <Route path='/clubs' element={<Clubs />} />
             <Route path='/courses' element={<Courses />} />
-
+            <Route path='/departments' element={<Departments/>}/>
+        <Route path='/departments/:id' element={<EditDepartment/>}/>
+        <Route path='/AddDepartment' element={<AddDepartment/>}/>
           </Routes>
 
 
