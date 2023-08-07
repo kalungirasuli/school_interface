@@ -16,9 +16,6 @@ function App() {
     <div className="main">
     <Nav />
     <div className="view">
-      <h3> TITLE</h3>
-      
-      <hr />
 
       {/* <h3> Staff</h3>
       <hr /> */}
