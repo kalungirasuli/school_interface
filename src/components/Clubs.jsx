@@ -1,5 +1,7 @@
-import React from "react";
 import {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 function Clubs() {
     const [clubData, setClubData] = useState([]);
@@ -19,6 +21,17 @@ function Clubs() {
     useEffect(() => {
         fetchClubs();
     }, []);
+
+    const deleteClub = (id) => {
+        axios.delete(`https://schoolapi-op58.onrender.com/v1/clubs/${id}`)
+            .then(() => {
+                // setClubData(clubData.filter((club) => club.id !== id));
+                fetchClubs();
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
+    }
 
     return(
         <>
@@ -40,10 +53,14 @@ function Clubs() {
                         <td>
                             <button className='edit'>Edit</button>
                         </td>
+                        <td>
+                            <button className='delete' onClick={() => deleteClub(item.id)}>Delete</button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
         </table>
+        <Link to="/add/club"><button>Add Club</button></Link>
         </>
     )
 }
