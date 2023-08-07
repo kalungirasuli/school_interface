@@ -8,7 +8,7 @@ export default function EditStaff() {
   const [firstName, setFirstName] = useState('');
   const [secondName, setSecondName] = useState('');
   const [gender, setGender] = useState('');
-  const [age, setAge] = useState({});
+  const [age, setAge] = useState(0);
   const [email, setEmail] = useState('');
 
   const [data, setData] = useState({});
@@ -52,17 +52,17 @@ export default function EditStaff() {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const updatedData = { 
-        ...data, 
+      const updatedData = {
+        ...data,
         firstName: firstName,
         secondName: secondName,
         gender: gender,
         age: age,
-        email:email  
-    };
+        email: email
+      };
 
       await axios.put(`https://schoolapi-op58.onrender.com/v1/staff/${id}`, updatedData);
-      fetchData(); 
+      fetchData();
     } catch (error) {
       console.error('Error updating data:', error);
     }
@@ -70,14 +70,35 @@ export default function EditStaff() {
 
   return (
     <>
-      <form>
-        <input type="text" value={firstName} onChange={handleFirstNameChange} />
-        <input type="text" value={secondName} onChange={handleSecondNameChange} />
-        <input type="text" value={gender} onChange={handleGenderChange} />
-        <input type="text" value={age} onChange={handleAgeChange} />
-        <input type="text" value={email} onChange={handleEmailChange} />
-        <button onClick={handleSave}>Save</button>
-      </form>
+      <div>
+        <h3>Fill to Edit Staff</h3>
+        <form>
+          <div>
+            <input type="text" value={firstName} onChange={handleFirstNameChange} />
+          </div>
+          <div>
+            <input type="text" value={secondName} onChange={handleSecondNameChange} />
+          </div>
+          <div>
+            Male
+            <input type="radio" name="gender" value="male" checked={gender === 'male'} onChange={handleGenderChange} />
+            Female
+            <input type="radio" name="gender" value="female" checked={gender === 'female'} onChange={handleGenderChange} />
+          </div>
+          <div>
+            <label>
+              Age:
+              <input type="number" value={age} onChange={handleAgeChange} />
+            </label>
+          </div>
+          <div>
+            <input type="text" value={email} onChange={handleEmailChange} />
+          </div>
+
+          <button onClick={handleSave}>Save</button>
+        </form>
+      </div>
+
     </>
   );
 }

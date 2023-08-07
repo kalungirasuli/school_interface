@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router'
 
 
 import EditStaff from './components/EditStaff.jsx'
+import AddStaff from './components/AddStaff.jsx'
 function App() {
 
 
@@ -31,6 +32,7 @@ function App() {
 
 
         <Route path='/staff/:id' element={<EditStaff/>}/>
+        <Route path='/AddStaff' element={<AddStaff/>}/>
 
       </Routes>
     
