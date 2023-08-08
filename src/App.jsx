@@ -15,6 +15,7 @@ import AddClub from "./components/AddClub.jsx";
 import AddCoures from "./components/AddCoures.jsx";
 import EditStaff from "./components/EditStaff.jsx";
 import AddStaff from "./components/AddStaff.jsx";
+import EditClub from "./components/EditClub.jsx";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
             <Route path="/staff" element={<Staff />} />
             <Route path="/students" element={<StudentTable />} />
             <Route path="/clubs" element={<Clubs />} />
+            <Route path="/clubs/:id" element={<EditClub />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/departments" element={<Departments />} />
             <Route path="/departments/:id" element={<EditDepartment />} />
