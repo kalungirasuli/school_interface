@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Staff() {
- 
+
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -19,7 +19,15 @@ export default function Staff() {
   useEffect(() => {
     fetchData();
   }, []);
-
+  
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`https://schoolapi-op58.onrender.com/v1/staff/${id}`);
+      setData((prevData) => prevData.filter((staff) => staff._id !== id));
+    } catch (error) {
+      console.error('Error deleting department:', error);
+    }
+  };
 
   return (
     <>
@@ -34,6 +42,8 @@ export default function Staff() {
             <th>Gender</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Action</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -45,13 +55,19 @@ export default function Staff() {
               <td>{staff.gender}</td>
               <td>{staff.age}</td>
               <td>{staff.email}</td>
+              <td>
+              <Link to={`/staff/${staff._id}`}><button>Edit</button></Link>
+              </td>
+              <td>
+              <button onClick={() => handleDelete(staff._id)}>Delete</button>
+              </td>
               
             </tr>
           ))}
         </tbody>
       </table>
       <button className="add" >
-        <Link to=''  className="addtext"> +Add</Link>
+        <Link to='/AddStaff'  className="addtext"> +Add</Link>
       </button>
     </>
   );

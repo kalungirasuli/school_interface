@@ -2,6 +2,7 @@
 import { Route, Routes } from 'react-router'
 
 //components
+
 import Staff from './components/Stafftable.jsx'
 import Nav from './components/Nav.jsx'
 import Clubs from './components/Clubs.jsx';
@@ -11,8 +12,9 @@ import AddDepartment from './components/AddDepartment.jsx';
 import EditDepartment from './components/EditDepartment.jsx';
 import Departments from './components/Departments.jsx';
 import AddClub from './components/AddClub.jsx'
-import AddCoures from './components/AddCoures.jsx';
-
+import AddCoures from './components/AddCoures.jsx'
+import EditStaff from './components/EditStaff.jsx'
+import AddStaff from './components/AddStaff.jsx'
 function App() {
 
 
@@ -23,6 +25,8 @@ function App() {
         <div className="view">
 
       <Routes>
+        <Route path='/staff/:id' element={<EditStaff/>}/>
+        <Route path='/AddStaff' element={<AddStaff/>}/>
       <Route path='/staff' element={<Staff />} />
             <Route path='/students' element={<StudentTable />} />
             <Route path='/clubs' element={<Clubs />} />
@@ -32,6 +36,7 @@ function App() {
             <Route path='/AddDepartment' element={<AddDepartment/>}/>
             <Route path='//add/club' element={<AddDepartment/>}/>
             <Route path='/AddCoures' element={<AddCoures/>}/>
+
       </Routes>
     
           
