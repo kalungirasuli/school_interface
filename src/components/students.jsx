@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function StudentTable() {
     const [students, setStudents] = useState([]);
