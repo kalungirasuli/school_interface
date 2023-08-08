@@ -11,6 +11,7 @@ import AddDepartment from './components/AddDepartment.jsx';
 import EditDepartment from './components/EditDepartment.jsx';
 import Departments from './components/Departments.jsx';
 import AddClub from './components/AddClub.jsx'
+import AddCoures from './components/AddCoures.jsx';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/departments/:id' element={<EditDepartment/>}/>
             <Route path='/AddDepartment' element={<AddDepartment/>}/>
             <Route path='//add/club' element={<AddDepartment/>}/>
+            <Route path='/AddCoures' element={<AddCoures/>}/>
       </Routes>
     
           

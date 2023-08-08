@@ -1,10 +1,10 @@
 
 import React from 'react'
-export default function Actions({Green,Red,Caution}) {
+export default function Actions({Green,Red,onclick}) {
   return (
     <div className='Actions'>
-      <button className='green' type="submit">{Green}</button>
-      <button className='red' onClick={Caution}>{Red}</button>
+      <button className='actionbutton' id='green' type="submit">{Green}</button>
+      <button className='actionbutton' id='red' onClick={onclick}>{Red}</button>
     </div>
   )
 }

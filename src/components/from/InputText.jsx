@@ -1,10 +1,13 @@
 
 import React from 'react'
 
-export default function InputText({placeholder,name,Inputvalue}) {
+export default function InputText({placeholder,name,defaultValue}) {
   return (
     <>
-      <input type="text" placeholder={placeholder} name={name} value={Inputvalue}/>
+    <div className="inputdiv">
+    <input className=" inputs" type="text" placeholder={placeholder} name={name} defaultValue={defaultValue}/>
+    </div>
+     
     </>
   )
 }
