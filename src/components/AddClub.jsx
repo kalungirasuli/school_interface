@@ -28,7 +28,7 @@ export default function AddClub() {
 
   return (
     <div>
-      {success && <Toast message={success} color={"green"} />}
+      {/* {success && <Toast message={success} color={"green"} />} */}
 
       {error && <Toast message={error} color={"red"} />}
       <form onSubmit={addClub}>
