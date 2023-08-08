@@ -28,11 +28,9 @@ export default function AddClub() {
 
   return (
     <div>
-      {success && <Toast success={success} />}
-      {/* <div className={`toast ${success ? "show" : ""}`}>
-        {success && <p>{success}</p>}
-      </div> */}
-      {error && <p>{error}</p>}
+      {success && <Toast message={success} color={"green"} />}
+
+      {error && <Toast message={error} color={"red"} />}
       <form onSubmit={addClub}>
         <div>
           <label>Club Name</label>
