@@ -31,6 +31,38 @@ li:hover{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+input{
+  width: 70%;
+  height: 30px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+
+}
+input[type='text']{
+  background: rgb(228, 226, 226);
+  font-size:20px ;
+}
+input[type='date']{
+  background: rgb(228, 226, 226);
+  font-size:20px ;
+}
+
+button{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+input[type='radio']{
+  margin: 5px;
+  width:20px;
+
+}
+
+
 table{
   width: 80%;
   border-collapse: collapse;
@@ -62,10 +94,95 @@ td{
   padding: 10px;
   color:white;
   text-decoration: none;
+  font-size: 25px;
 }
 .links{
   text-decoration: none;
   color: rgb(0, 0, 0);
+}
+form{
+  width: 40%;
+  margin:auto;
+  margin-top: 70px;
+  text-align: center;
+}
+.heading{
+  text-align: center;
+  background: rgb(45, 45, 247);
+  width: 50%;
+  margin:auto;
+  margin-bottom: 20px;
+
+}
+.heading h3{
+  margin: 0;
+  padding: 10px;
+  color: #ffff;
+  font-size: 15px;
+}
+.inputs{
+  width: 70%;
+  height: 30px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+.inputs[type='text']{
+  background: rgb(228, 226, 226);
+  font-size:20px ;
+}
+.inputs[type='date']{
+  background: rgb(228, 226, 226);
+  font-size:20px ;
+}
+.radio{
+  margin: 5px;
+  width: 40px;
+}
+
+.radios{
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
+}
+::-webkit-input-placeholder { /* Edge */
+  font-size: 20px;  
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 20px; 
+}
+
+::placeholder {
+ 
+  font-size: 20px;
+}
+.Actions{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin:20px auto;
+}
+.actionbutton{
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.Actions #green{
+  background-color: rgb(3, 114, 30);
+  color: #ffff;
+}
+.Actions #red{
+  background-color: rgb(255, 0, 0);
+  color: #ffff;
+}
+svg{
+  width: 25px;
+  height: 25px;
 }
 .main{
   display:grid;
@@ -86,10 +203,5 @@ body{
   padding: 0;
 }
 
-table{
-  width:100%
-}
-th,td{
-  border-bottom: 1px solid black;
-}
+
 

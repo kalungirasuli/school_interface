@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Add from './from/Add.jsx';
 function Courses() {
     const [staffData, setStaffData] = useState([]);
 
@@ -44,6 +45,7 @@ function Courses() {
         ))}
         </tbody>
     </table>
+    <Add />
   </>
  )
 }
