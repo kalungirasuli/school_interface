@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 export default function Departments() {
   const [data, setData] = useState([]);
 
@@ -34,6 +36,7 @@ export default function Departments() {
           <tr>
             <th>ID</th>
             <th>Department Name</th>
+            <th>Head Of Dept</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -42,16 +45,17 @@ export default function Departments() {
             <tr key={department._id}>
               <td>{department._id}</td>
               <td>{department.departmentName}</td>
+              <td>{department.headOfDepartment}</td>
               <td>
-                <Link to={`/departments/${department._id}`}>Edit</Link>
-                <button onClick={() => handleDelete(department._id)}>Delete</button>
+                <Link className="edit" to={`/departments/${department._id}`}>Edit</Link>
+                <button className="delete" onClick={() => handleDelete(department._id)}>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       <button>
-        <Link to='/AddDepartment'>Add</Link>
+        <Link  to='/AddDepartment'>Add</Link>
       </button>
     </>
   );
