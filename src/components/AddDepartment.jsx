@@ -3,10 +3,15 @@ import { useState } from 'react';
 
 export default function AddDepartment() {
   const [departmentName, setDepartmentName] = useState('');
+  const [headOfDepartment, setHeadOfDepartment] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleDepartmentNameChange = (e) => {
     setDepartmentName(e.target.value);
+  };
+
+  const handleHeadOfDepartmentChange = (e) => {
+    setHeadOfDepartment(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -14,12 +19,14 @@ export default function AddDepartment() {
     try {
       const newData = {
         departmentName: departmentName,
+        headOfDepartment: headOfDepartment,
       };
 
       await axios.post('https://schoolapi-op58.onrender.com/v1/departments', newData);
 
       // Optionally, you can reset the form after successful submission
       setDepartmentName('');
+      setHeadOfDepartment('');
       setErrorMessage('');
     } catch (error) {
       if (error.response && error.response.status === 409) {
@@ -34,11 +41,27 @@ export default function AddDepartment() {
     <>
       <form onSubmit={handleSubmit}>
         <label>
-          Department Name:
-          <input type="text" value={departmentName} onChange={handleDepartmentNameChange} />
+          <div className="container-fluid">
+                <div className='d-flex justify-content-center'>
+                    <div className='col' >
+                        <br />
+                        <h2 style={{ marginLeft: 150 }}> Create Department</h2>
+                        <br />
+                        Department Name:
+                        <form  className="form-inline" >
+                            <div >
+                            <input type="text" value={departmentName} onChange={handleDepartmentNameChange} />
+                            </div>
+                            Head of Department:
+                            <div >
+                            <input type="text" value={headOfDepartment} onChange={handleHeadOfDepartmentChange} />
+                            </div>
+                            <button >Add Department</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </label>
-
-        <button>Add Department</button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
     </>
