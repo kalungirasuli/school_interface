@@ -1,8 +1,7 @@
 //import React from 'react'
-import { Route, Routes } from 'react-router'
+import { Route, Routes } from "react-router";
 
 //components
-
 import Staff from './components/Stafftable.jsx'
 import Nav from './components/Nav.jsx'
 import Clubs from './components/Clubs.jsx';
@@ -17,9 +16,8 @@ import AddCoures from './components/AddCoures.jsx'
 import EditStaff from './components/EditStaff.jsx'
  import EditStudent from './components/EditStudent.jsx'
 import AddStaff from './components/AddStaff.jsx'
+
 function App() {
-
-
   return (
     <>
       <div className="main">
@@ -46,8 +44,9 @@ function App() {
         </div>
       </div>
 
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
