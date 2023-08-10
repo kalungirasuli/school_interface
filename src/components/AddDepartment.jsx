@@ -39,16 +39,11 @@ export default function AddDepartment() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <div className="container-fluid">
-                <div className='d-flex justify-content-center'>
-                    <div className='col' >
                         <br />
                         <h2 style={{ marginLeft: 150 }}> Create Department</h2>
                         <br />
                         Department Name:
-                        <form  className="form-inline" >
+                        <form onSubmit={handleSubmit} className="form-inline" >
                             <div >
                             <input type="text" value={departmentName} onChange={handleDepartmentNameChange} />
                             </div>
@@ -58,12 +53,7 @@ export default function AddDepartment() {
                             </div>
                             <button >Add Department</button>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </label>
-      </form>
-      {errorMessage && <p>{errorMessage}</p>}
+                        {errorMessage && <p>{errorMessage}</p>}
     </>
   );
 }
