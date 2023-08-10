@@ -1,9 +1,9 @@
 
-import Heading from './from/Heading.jsx'
-import InputText from './from/InputText.jsx'
-import Radio from './from/Radio.jsx'
-import Date from './from/DateInput.jsx'
-import Actions from './from/Actions.jsx'
+import Heading from '../../../components/microComponents/from/Heading'
+import InputText from '../../../components/microComponents/from/InputText'
+import Radio from '../../../components/microComponents/from/Radio'
+import Date from '../../../components/microComponents/from/DateInput'
+import Actions from '../../../components/microComponents/from/Actions'
 
 
 export default function AddCoures() {

@@ -1,51 +1,36 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
-import Toast from "./from/Toast";
+import  { useState } from "react";
 import axios from "axios";
-import { Navigate } from "react-router";
-function EditClub() {
-  const { id } = useParams();
+//import InputText from "../../../components/microComponents/from/InputText";
+import Toast from "../../../components/microComponents/from/Toast";
+export default function AddClub() {
   const [name, setName] = useState("");
   const [headOfClub, setHeadOfClub] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const fetchClub = async () => {
-    try {
-      const response = await axios.get(
-        `https://schoolapi-op58.onrender.com/v1/clubs/${id}`
-      );
-      setName(response.data.clubName);
-      setHeadOfClub(response.data.headOfClub);
-      // Set other state variables for other fields if needed
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
-  const handleEdit = async (e) => {
+  const addClub = async (e) => {
     e.preventDefault();
     await axios
-      .put(`https://schoolapi-op58.onrender.com/v1/clubs/${id}`, {
+      .post("https://schoolapi-op58.onrender.com/v1/clubs/", {
         clubName: name,
         headOfClub: headOfClub,
       })
       .then(() => {
+        setSuccess("Successfily added club");
         setName("");
         setHeadOfClub("");
-        setSuccess("Succefully edited Club");
       })
       .catch((error) => {
         setError(error.message);
       });
   };
-  useEffect(() => {
-    fetchClub();
-  }, []);
+
   return (
     <div>
-      {success && <Navigate to="/clubs" />}
+      {/* {success && <Toast message={success} color={"green"} />} */}
+
       {error && <Toast message={error} color={"red"} />}
-      <form onSubmit={handleEdit}>
+      <form onSubmit={addClub}>
         <div>
           <label>Club Name</label>
           <input
@@ -67,5 +52,3 @@ function EditClub() {
     </div>
   );
 }
-
-export default EditClub;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../toast.css";
+import "../../../toast.css";
 
 function Toast({ message, color }) {
   const [isVisible, setIsVisible] = useState(false);

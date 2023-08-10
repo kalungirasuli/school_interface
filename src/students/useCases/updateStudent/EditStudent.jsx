@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Heading from './from/Heading.jsx'
+import Heading from '../../../components/microComponents/from/Heading'
 import { Link } from "react-router-dom";
 
 export default function EditStudent() {
     const { id } = useParams();
 
-    const [student, setStudent] = useState({});
+    const [student, setStudent] = useState({}); //this is commited due to error delection please fix it ....
     const [editStudent, setEditStudent] = useState({});
 
     const fetchData = async () => {

@@ -1,7 +1,7 @@
-import '../index.css';
+
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import Heading from './from/Heading.jsx'
+import Heading from '../../../components/microComponents/from/Heading'
 // import Radio from './from/Radio.jsx'
 
 function Student() {

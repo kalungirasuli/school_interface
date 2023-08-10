@@ -1,7 +1,7 @@
 
-import React from 'react';
+
 import { useState, useEffect } from 'react';
-import Add from './from/Add.jsx';
+import Add from '../../../components/microComponents/from/Add.jsx';
 function Courses() {
     const [staffData, setStaffData] = useState([]);
 
